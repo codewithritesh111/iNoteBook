@@ -4,7 +4,7 @@ const app = express();
 var cors = require("cors");
 app.use(
   cors({
-    origin: ["i-note-book-mvr6.vercel.app"],
+    origin: ["https://i-note-book-wine.vercel.app"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   })
