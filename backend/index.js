@@ -2,7 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 var cors = require("cors");
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://deploy-mern-lwhq.vercel.app"],
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+  })
+);
 mongoose.connect(
   "mongodb+srv://Ritesh244P:secret244@cluster0.1ok4pa2.mongodb.net/"
 );
