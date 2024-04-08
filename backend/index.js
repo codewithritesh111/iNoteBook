@@ -4,9 +4,7 @@ const app = express();
 var cors = require("cors");
 app.use(
   cors({
-    origin: ["https://i-note-book-wine.vercel.app"],
-    methods: ["POST", "GET", "DELETE", "PUT"],
-    credentials: true,
+    origin: "*",
   })
 );
 mongoose.connect(
