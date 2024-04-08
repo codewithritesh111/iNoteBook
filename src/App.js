@@ -10,27 +10,31 @@ import Alert from "./components/Alert";
 import { useState } from "react";
 
 function App() {
-  const [alert,showAlert] = useState(null)
-  const showA = (message,type)=>{
-    showAlert({message:message,type:type})
-    setTimeout(()=>{
-      showAlert(null)
-    },2000)
-  }
+  const [alert, showAlert] = useState(null);
+  const showA = (message, type) => {
+    showAlert({ message: message, type: type });
+    setTimeout(() => {
+      showAlert(null);
+    }, 2000);
+  };
 
   return (
     <div className="App">
       <NoteState>
-      <Router>
-        <Navbar />
-        <Alert alert={alert} alertFunc={showAlert}/>
-        <Routes>
-          <Route exact path="/" element={<Home  alertFunc={showA}/>} />
-          <Route exact path="/login" element={<Login  alertFunc={showA}/>} />
-          <Route exact path="/signup" element={<Signup  alertFunc={showA}/>} />
-          <Route exact path="/about" element={<About/>} />
-        </Routes>
-      </Router>
+        <Router>
+          <Navbar />
+          <Alert alert={alert} alertFunc={showAlert} />
+          <Routes>
+            <Route exact path="/" element={<Home alertFunc={showA} />} />
+            <Route exact path="/login" element={<Login alertFunc={showA} />} />
+            <Route
+              exact
+              path="/signup"
+              element={<Signup alertFunc={showA} />}
+            />
+            <Route exact path="/about" element={<About />} />
+          </Routes>
+        </Router>
       </NoteState>
     </div>
   );
